@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型之内边距复合写法</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* padding-left: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 5px; */
+            /* 内边距复合写法(简写) */
+            /* padding: 5px; */
+            /* padding: 5px 10px; */
+            /* padding: 5px 10px 20px; */
+            /* 注意这个地方是 上 右 下 左 是顺时针的！！*/
+            padding: 5px 10px 20px 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        盒子的内容是content盒子的内容是content盒子的内容是content盒子的内容是content
+    </div>
+</body>
+</html>
