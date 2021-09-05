@@ -9,6 +9,12 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 a {
     text-decoration: none;
 }
@@ -85,4 +91,16 @@ div {
 }
 .focus img {
     width: 100%;
+}
+/* 局部导航栏 */
+.local-nav {
+    display: flex;
+    height: 64px;
+    background-color: #fff;
+    margin: 3px 4px;
+    border-radius: 8px;
+}
+
+.local-nav li {
+    flex: 1;
 }
