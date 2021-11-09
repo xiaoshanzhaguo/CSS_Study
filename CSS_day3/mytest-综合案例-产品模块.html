@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mytest-综合案例-产品模块</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* 这里是body有一个颜色 */
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .box {
+            /* 长和宽是如何得出的？ */
+            width: 298px;
+            height: 415px;
+            background-color: #fff;
+            margin: 100px auto;
+        }
+        /* 图片太大了，要设置一个图片的宽度 */
+        .box img {
+            /* width: 298px; */
+            width: 100%;
+        }
+
+        /* 设置p标签格式*/
+        .review {
+            height: 70px;
+            font-size: 14px;
+            /* 还要设置margin padding值 */
+            /* 这里给padding值，因为没给它宽度，所以不会撑开盒子 */
+            padding: 0 28px;
+            /* 而这里有height，所以不能给padding-top */
+            margin-top: 30px;
+        }
+
+        .appraise {
+            /* 也有左右的内边距，还有margin-top（根据图片得出） */
+            /* 用吸管工具吸取颜色，字体大小看出来比上面的文字小点 */
+            font-size: 12px;
+            color: #b0b0b0;
+            /* 这里的margin-top记得要减去上面元素占的空白的部分(上面有高度) */
+            margin-top: 20px; 
+            padding: 0 28px;
+        }
+        /* 测量出来Info的部分上面有20px的margin-top，左右有28px的padding */
+        .info {
+            /* 设置共同的文字大小 */
+            font-size: 14px;
+            margin-top: 15px;
+            padding: 0 28px;
+        }
+        /* h4要和span放在同一行，需要将h4变成行内块元素 */
+        .info h4 {
+            display: inline-block;
+            /* 这里记得是400，而不是500 */
+            font-weight: 400;
+        }
+        /* 这里应该为所有的a做一个风格样式 */
+        /* .info h4 a {
+            color: #000;
+            text-decoration: none;
+        } */
+        /* 竖线怎么去设置呢？ 
+           1.小竖线是灰色的 吸管吸取颜色
+           2.它的左边和右边都有距离 （盒子与盒子直接的距离，用margin）
+           3.不让小竖线倾斜
+        */
+        .info em {
+            font-style: normal;
+            color: #ebe4e0;
+            margin: 0 6px 0 15px;
+        }
+        .info span {
+            color: #ff6700;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a href="#"><img src="images/img.jpg" alt="产品模块图"></a>
+        <p class="review">快递牛，整体不错蓝牙可以说秒连。红米给力</p>
+        <div class="appraise">来自于 117384232 的评价</div>
+        <div class="info">
+            <h4><a href="">Redmi AirDots真无线蓝...</a></h4>
+            <em>|</em>
+            <span>99.9元</span>
+        </div>
+    </div>
+</body>
+</html>

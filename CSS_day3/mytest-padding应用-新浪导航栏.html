@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mytest-新浪导航栏</title>
+    <style>
+        .nav {
+            /* 这里不需要设置宽度，会默认使用父级的宽度 */
+            /* width: 1264px; */
+            height: 41px;
+            background-color: #fcfcfc;
+            border-top: 3px solid #ff8500;
+            border-bottom: 1px solid #edeef0;
+            /* ！！！把设置行高放在这部分，这里可以理解为整体 */
+            line-height: 41px;
+        }
+
+        .nav a {
+            /* a属于行内元素，此时要转换为行内块元素 */
+            display: inline-block;
+            /* 设置成和父亲一样高 */
+            height: 41px;
+            color: #4c4c4c;
+            font-size: 12px;
+            /* padding: 15px; */
+            padding: 0 20px;
+            font-family: "Microsoft Yahei";
+            /* line-height: 45px; */
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            color: #ff8500;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="#">新浪导航</a>
+        <a href="#">手机新浪网</a>
+        <a href="#">移动客户端</a>
+        <a href="#">微博</a>
+        <a href="#">三个字</a>
+    </div>
+</body>
+</html>
