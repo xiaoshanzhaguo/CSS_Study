@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mytest-新闻快报</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 设置li的全局属性 */
+        li {
+            list-style: none;
+        }
+
+        .box {
+            width: 248px;
+            height: 163px;
+            margin: 100px auto;
+            /* 好像经常会用到的边框样式 */
+            border: 1px solid #ccc;
+        }
+
+        .box h3 {
+            /* 高度放在前面 */
+            height: 32px;
+            /* 边框放在这里 */
+            border-bottom: 1px solid #ccc;
+            /* 然后放字体 */
+            font-size: 14px;
+            /* color: #000; */
+            /* 然后放font-weight */
+            font-weight: 400;
+            line-height: 32px;
+            /* 这里用padding值就可以了 */
+            /* text-indent: 1em; */
+            padding-left: 15px;
+        }
+
+        /* .box ul li {
+            这里应该放在全局！！！
+            list-style-type: none;
+        } */
+
+        /* 这里直接写ul，不用再ul里面再加class*/
+        .box ul {
+            margin-top: 7px;
+        }
+
+        /* ！！！下面这一块是没有考虑到的 
+            可能是看出来是有高度，并有行高的
+        */
+        .box ul li {
+            height: 23px;
+            /* 行高需要测量 */
+            line-height: 23px;
+            padding-left: 20px;
+        }
+
+        .box ul li a{
+            font-size: 12px;
+            color: #666;
+            text-decoration: none;
+            /* 下面这里不需要 我们来设置li的padding-left就好了 */
+            /* padding: 0 20px; */
+        }
+
+        .box ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 这里暂时不用再放一层div去包括！！！ -->
+        <!-- 这里不是h4，而是h3 -->
+        <h3>品优购快报</h3>
+        <ul>
+            <li><a href="#">【特惠】爆款耳机5折秒！</a></li>
+            <li><a href="#">【特惠】母亲节，健康好礼低至5折！</a></li>
+            <li><a href="#">【特惠】爆款耳机5折秒！</a></li>
+            <li><a href="#">【特惠】9.9元洗100张照片！</a></li>
+            <li><a href="#">【特惠】长虹智能空调立省1000</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
