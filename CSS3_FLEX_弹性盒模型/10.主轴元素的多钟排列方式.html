@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主轴元素的多钟排列方式</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-left: 50px;
+            padding-top: 15px;
+        }
+
+        article {
+            border: solid 5px silver;
+            width: 650px;
+            height: 550px;
+            /* height: 280px; */
+            display: flex;
+            /* flex-direction: row-reverse; */
+            /* justify-content: flex-start; */
+            /* flex-direction: column-reverse; */
+            /* justify-content: flex-start; */
+            flex-direction: column;
+            /* justify-content: center; */
+            /* justify-content: space-between;  */
+            /* justify-content: space-around;  */
+            justify-content: space-evenly; 
+        }
+
+        article * {
+            /* 因为这里只有div 就用*来代表div了 */
+            width: 100px;
+            height: 100px;
+            background: blueviolet;
+            /* 背景把内边距盖住了，我们加一行代码只让他盖住内容区域 */
+            /* background-clip: content-box; */
+            /* 去掉外面的外边距，他们就挨在一起了 */
+            /* margin: 10px; */
+            /* 如果加上内边距，盒子也是这么大 */
+            padding: 10px;
+            /* 不希望加内边距的时候，让盒子变宽 */
+            /* 下面的代码实现不算内边距，盒子有多大 */
+            box-sizing: border-box;
+            font-size: 35px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </article>
+</body>
+</html>

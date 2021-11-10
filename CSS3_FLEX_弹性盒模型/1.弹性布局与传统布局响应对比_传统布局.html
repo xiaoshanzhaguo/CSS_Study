@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 下面这个代码是做媒体查询使用到的，不应该删除 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山楂果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            /* width: 300px; */
+            /* background-color: beige; */
+            position: relative;
+            height: 100vh;
+            /* margin: 0 auto; */
+        }
+
+        main nav {
+            /* 注意顺序 */
+            width: 80px;
+            position: absolute;
+            /* height: 100vh; */
+            /* position: relative; */
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background-color: purple;
+        }
+
+        main article {
+            position: relative;
+            /* height: 50px; */
+            /* width: 100vh; */
+            background-color: #ccc;
+            padding-left: 90px;
+            /* background-clip: border-box; */
+            /* 下面是选择内容区域 */
+            background-clip: content-box; 
+            /* 别忘了下面这部分 */
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <nav>
+            
+        </nav>
+        <article>
+            aaa
+        </article>
+    </main>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>声明弹性盒子的几种方式</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        footer {
+            /* 块级弹性盒子 */
+            display: flex;
+            /* 行级弹性盒子 */
+            /* display: inline-flex; */
+            /* 加上背景颜色后，发现它是块级元素,故可以在后面设置高度 */
+            background: #000;
+            height: 400px;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div>山楂果</div>
+        <div>想吃山楂</div>
+        <div>山楂果好吃</div>
+    </footer>
+</body>
+</html>

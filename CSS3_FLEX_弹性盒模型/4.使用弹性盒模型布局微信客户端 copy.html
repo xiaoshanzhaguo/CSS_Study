@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>传统方式布局微信客户端界面</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+/* 
+        head {
+            display: block;
+            height: 30px;
+            这里加一个外线
+            outline: solid 5px #ddd;
+        } */
+        body {
+            /* 跟视口一样大 */
+            height: 100vh;
+            /* 现在加上弹性盒子模型 */
+            display: flex;
+            /* 改变排列方向，变成上下的形式 */
+            flex-direction: column;
+        }
+
+        main {
+            background: #ddd;
+            /* 这里让他自动变大 */
+            flex: 1;
+        }
+
+        footer {
+            background: linear-gradient(to top, #f3f3f3, #ccc, #f3f3f3);
+            height: 50px;
+            /* 先加上下面这部分，文字就变成了一行 */
+            display: flex;
+            /* 改变对齐方式，平均分配 */
+            justify-content: space-evenly;
+        }
+
+        footer div {
+            /* 让每个div都占一个位置 */
+            flex: 1;
+            text-align: center;
+            line-height: 3em;
+            color: #555;
+        }
+
+        footer div:nth-child(n+2) {
+            border-left: solid 1px #ccc;
+        }
+    </style>
+</head>
+<body>
+    <main>111</main>
+    <footer>
+        <div>山楂果</div>
+        <div>想吃山楂</div>
+        <div>山楂果好吃</div>
+        <div>山楂果真香</div>
+    </footer>
+</body>
+</html>
