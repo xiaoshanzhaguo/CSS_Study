@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性元素交叉轴设置</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-left: 50px;
+            padding-top: 15px;
+        }
+
+        article {
+            border: solid 5px silver;
+            width: 550px;
+            height: 550px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        article :first-child {
+            /* 这里讲的article里面的div,当有多层的时候，需要套多层的弹性容器去控制 */
+            align-self: flex-start;
+            /* height: auto; */
+        }
+
+        article :nth-child(2) {
+            align-self: center;
+        }
+
+        article * {
+            width: 100px; 
+            height: 100px; 
+            background: blueviolet;
+            /* background-clip: content-box; */
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 35px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </article>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位元素在弹性布局中的表现</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-left: 50px;
+            padding-top: 15px;
+        }
+
+        article {
+            border: solid 5px silver;
+            width: 400px;
+            height: 500px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            /* 使用主轴对齐的方式 */
+            justify-content: space-between;
+            position: relative;
+        }
+
+        article * {
+            flex: 1;
+            background: blueviolet;
+            /* 背景填充方式，只填充内容 */
+            background-clip: content-box;
+            /* 这里内边距不会被填充，我们可以看到一些边线 */
+            padding: 10px;
+            font-size: 35px;
+            color: white;
+        }
+
+        article :nth-child(1) {
+            position: relative;
+            background-color: #000;
+            /* 下面改变层级 */
+            /* z-index: -2; */
+            left: 100px;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </article>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性布局移动端通用菜单</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            /* 把body高度变成视口的高度 */
+            height: 100vh;
+            /* 把body变成弹性盒子 */
+            display: flex;
+            /* 改变主轴方向，列的形式 */
+            flex-direction: column;
+        }
+
+        main {
+            /* 让它自动延伸 */
+            flex: 1;
+            background: #f3f3f3;
+        }
+
+        footer {
+            height: 50px;
+            background: #eee;
+            display: flex;
+            flex-direction: row;
+            /* 主轴对齐方式 */
+            justify-content: space-between;
+            /* 还要加上顶部线 */
+            border-top: solid 1px #ccc;
+        }
+
+        footer section {
+            /* 注意这里少了！！！ 没有给section设置缩放 */
+            flex: 1;
+            /* background: red; */
+            border-right: 1px solid #ccc;
+            display: flex;
+            /* 更改排列顺序,要反转一下，不然菜单就在上面 */
+            flex-direction: column-reverse;
+        }
+
+        footer section:last-child {
+            /* 把子元素最后一个右边线给去掉 */
+            border-right: none;
+        }
+
+        footer section h4 {
+            /* h4的高度改成和父级一样 */
+            flex: 0 0 50px;
+            /* 下面要控制对齐，先把h4也变成弹性，按列进行排序，垂直居中 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            /* 好像 align-self: center也可以的？ 反正我这里试了，是不行的 */
+
+            cursor: pointer;
+        }
+
+        footer section ul {
+            /* ul里面也有元素，故也可以设置为弹性 */
+            display: flex;
+            flex-direction: column;
+            border: solid 1px #ccc;
+            text-align: center;
+            margin-bottom: 5px;
+            /* 来点距离 */
+            margin: 5px;
+            /* 给ul加上倒角 */
+            border-radius: 10px;
+        }
+
+        footer section ul li {
+            /* 此时很多元素既是弹性元素，也是弹性容器 */
+            flex: 1 0 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* 加上下边线 */
+            border: solid 1px #ccc;
+            /* 给li加上一个点击效果 */
+            cursor: pointer;
+        }
+
+        /* 给li的最后一个不加线 */
+        footer section ul li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <main></main>
+    <footer>
+        <section>
+            <!-- 这里面使用h4来布局，当然你也可以使用dl dt dd来布局的 -->
+            <h4>教程</h4>
+            <ul>
+                <li>PHP</li>
+                <li>CSS</li>
+            </ul>
+        </section>
+        <section>
+            <h4>直播</h4>
+            <ul>
+                <li>PHP</li>
+                <li>CSS</li>
+            </ul>
+        </section>
+        <section>
+            <h4>直播</h4>
+            <ul>
+                <li>PHP</li>
+                <li>CSS</li>
+            </ul>
+        </section>
+        <section>
+            <h4>软件</h4>
+            <ul>
+                <li>PHP</li>
+                <li>CSS</li>
+                <li>CSS</li>
+                <li>CSS</li>
+            </ul>
+        </section>
+    </footer>
+</body>
+</html>

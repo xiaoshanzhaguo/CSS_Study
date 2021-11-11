@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性元素排序实例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-left: 50px;
+            padding-top: 15px;
+        }
+
+        article {
+            border: solid 5px silver;
+            width: 400px;
+            height: 500px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        article section {
+            /* 只放不缩 */
+            flex: 1 0 100px;
+            background: blueviolet;
+            background-clip: content-box;
+            padding: 10px;
+            text-align: center;
+            /* 这里section里也有两个元素，把section变成弹性盒模型 */
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+        }
+
+        article section div {
+            /* 自动缩放，自动填满 */
+            flex: 1;
+            /* 垂直居中，不仅可以更改行距，还可以通过添加弹性盒子的方式 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 25px;
+        }
+
+        article section span {
+            padding: 10px;
+            background: #333;
+            /* 给元素加上一个小手 */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <section>
+            <div>shanzhaguo.com</div>
+            <span onclick="up(this)">up</span>
+        </section>
+        <section>
+            <div>山楂果</div>
+            <span onclick="up(this)">up</span>
+        </section>
+        <section>
+            <div>shanzha.com</div>
+            <span onclick="up(this)">up</span>
+        </section>
+    </article>
+
+    <script>
+        function up(el) {
+            // 下面会输出默认0
+            // console.log(getComputedStyle(el.parentElement, null).order);
+            let order = getComputedStyle(el.parentElement, null).order;
+            // 当它的数值变小时，就会上移了
+            el.parentElement.style.order = order * 1 - 1;
+        }
+    </script>
+</body>
+</html>

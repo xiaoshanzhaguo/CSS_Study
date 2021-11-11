@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素动态缩小的处理技巧</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-left: 50px;
+            padding-top: 15px;
+        }
+
+        article {
+            border: solid 5px silver;
+            width: 400px;
+            height: 500px;
+            display: flex;
+            padding: 10px;
+            /* flex-wrap: wrap; */
+        }
+
+        /* 缩小计算方式：
+            200的空间进行缩小/(每个元素的宽度*缩小比例)
+            200/(200*1 + 200*3)*3
+         */
+        article div:nth-child(1) {
+            flex-shrink: 0;
+        }
+
+        /* (200/(200*1 + 200*3))*2 */
+        article div:nth-child(2) {
+            flex-shrink: 1;
+        }
+
+        /* (200/(200*1 + 200*3))*3 */
+        /* 0.75*元素的宽度200 = 150(缩小的值) */
+        /* 最终值：200-150=50 */
+        article div:nth-child(3) {
+            /* 这里缩小的比例最大 */
+            flex-shrink: 3;
+        }
+
+        article div {
+            flex-shrink: 0;
+            width: 200px; 
+            height: 100px; 
+            background: blueviolet;
+            background-clip: content-box;
+            border: solid 1px blueviolet;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 35px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </article>
+</body>
+</html>

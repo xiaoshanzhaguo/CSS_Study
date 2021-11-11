@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性元素规则合定义</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-left: 50px;
+            padding-top: 15px;
+        }
+
+        article {
+            border: solid 5px silver;
+            width: 400px;
+            height: 500px;
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        article div {
+            /* flex-grow: 1;
+            flex-shrink: 2;
+            flex-basis: 100px; */
+            /* 在下面的情况下，会溢出，因为他们不进行缩放 */
+            /* 中间的变成1才会进行缩放 */
+            flex: 0 0 200px;
+            /* width: 100px;  */
+            height: 100px; 
+            background: blueviolet;
+            background-clip: content-box;
+            border: solid 1px blueviolet;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 35px;
+            color: white;
+        }
+
+        /* 下面独立进行控制 */
+        article div:nth-child(1) {
+            /* 后面两个可以不写，但是第一个必须要写 */
+            /* flex: 1; */
+            /* 工作中常用到的。 */
+            flex: 1 1 200px;
+        }
+
+        article div:nth-child(2) {
+            /* flex: 5; */
+            flex: 1 3 200px;
+        }
+
+        article div:nth-child(3) {
+            /* 这里不进行缩放 */
+            /* flex: 0; */
+            /* 可以讲基准值调成100 */
+            /* flex: 0 0 100px; */
+            flex: 1 0 200px;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </article>
+</body>
+</html>

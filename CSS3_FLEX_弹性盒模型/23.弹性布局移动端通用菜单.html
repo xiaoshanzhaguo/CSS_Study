@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性布局移动端通用菜单</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            /* 把body高度变成视口的高度 */
+            height: 100vh;
+            /* 把body变成弹性盒子 */
+            display: flex;
+            /* 改变主轴方向，列的形式 */
+            flex-direction: column;
+        }
+
+        main {
+            /* 让它自动延伸 */
+            flex: 1;
+            background: #f3f3f3;
+        }
+
+        footer {
+            height: 50px;
+            background: #eee;
+            display: flex;
+            flex-direction: row;
+            /* 主轴对齐方式 */
+            justify-content: space-between;
+            /* 还要加上顶部线 */
+            border-top: solid 1px #ccc;
+        }
+
+        footer section {
+            /* 注意这里少了！！！ 没有给section设置缩放 */
+            flex: 1;
+            /* background: red; */
+            border-right: 1px solid #ccc;
+        }
+
+        footer section:last-child {
+            /* 把子元素最后一个右边线给去掉 */
+            border-right: none;
+        }
+    </style>
+</head>
+<body>
+    <main></main>
+    <footer>
+        <section></section>
+        <section></section>
+        <section></section>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>（弹性）元素可用空间分配</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-left: 50px;
+            padding-top: 15px;
+        }
+
+        article {
+            border: solid 5px silver;
+            width: 550px;
+            height: 550px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        article div:nth-child(1) {
+            flex-grow: 0;
+        }
+
+        article div:nth-child(2) {
+            flex-grow: 1;
+        }
+
+        article div:nth-child(3) {
+            flex-grow: 3;
+        }
+
+        article div {
+            width: 100px; 
+            height: 100px; 
+            background: blueviolet;
+            background-clip: content-box;
+            border: solid 1px blueviolet;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 35px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </article>
+</body>
+</html>
