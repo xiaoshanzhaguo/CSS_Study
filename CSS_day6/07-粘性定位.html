@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07-粘性定位</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        .nav {
+            position: sticky; 
+            /* 当它到顶部的距离变成0像素后，它就变成粘性定位 */
+            top: 0;
+            width: 800px;
+            height: 50px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 没加sticky 一开始导航栏属于典型的标准流 随页面滚动 -->
+    <div class="nav">我是导航栏</div>
+</body>
+</html>
