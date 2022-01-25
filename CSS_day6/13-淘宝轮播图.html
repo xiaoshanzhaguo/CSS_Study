@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13-淘宝轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        .tb-promo {
+            position: relative;
+            width: 520px;
+            height: 280px;
+            background-color: pink;
+            /* 由于盒子是普通的标准流，就可以通过margin auto来水平居中。*/
+            margin: 100px auto;
+        }
+
+        .tb-promo img {
+            /* 在后面上传图片时，对图片进行拉伸，保证图片和盒子一样大 */
+            width: 520px;
+            height: 280px;
+        }
+
+        /* 并集选择器可以集体声明相同的样式 */
+        .prev, .next {
+            position: absolute;
+            /* left: 0; */
+            top: 50%;
+            margin-top: -15px;
+            width: 20px;
+            height: 30px;
+            /* 下面使用rgba更合适 */
+            /* background-color: black 0.7; */
+            background-color: rgba(0, 0, 0, .3);
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .prev {
+            /* 注意这里位置的移动 */
+            left: 0;
+            /* top: 50%;
+            left: 0;
+            margin-top: -15px; */
+            
+            /* border-radius: 15px; */
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        
+        .next {
+            /* 如果一个盒子既有left属性，也有right属性，则默认会执行left属性 
+            同理 top bottom 会执行top值*/
+            right: 0;
+
+            /* border-radius: 15px; */
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+        .promo-nav {
+            position: absolute;
+            left: 50%;
+            bottom: 15px;
+            margin-left: -35px;
+            width: 70px;
+            height: 13px;
+            background-color: rgba(255, 255, 255, .3);
+            border-radius: 7px;
+        }
+        .promo-nav li {
+            float: left;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: 3px;
+        }
+        /* 不要忘记选择器权重的问题 */
+        .promo-nav .selected {
+            background-color: #ff5000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tb-promo">
+        <img src="./images/tb.jpg" alt="">
+        <!-- 要加了文字后才会有箭头出现！ -->
+        <!-- 左侧按钮箭头 -->
+        <a href="" class="prev">&lt;</a>
+        <!-- 右侧按钮箭头 -->
+        <a href="" class="next">&gt;</a>
+        <!-- 小圆点 -->
+        <ul class="promo-nav">
+            <li class="selected"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+</html>
