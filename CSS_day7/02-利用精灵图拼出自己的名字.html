@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用精灵图拼出自己的名字</title>
+    <style>
+        span {
+            /* 行内元素无法设置宽高，故要转成行内块元素 */
+            display: inline-block;
+            /* 将下面背景相同的代码抽出来，只需要将position改成自己独有的 */
+            background: url(images/abcd.jpg) no-repeat;
+        }
+
+        .q  {
+            width: 117px;
+            height: 114px;
+            /* background-color: pink; */
+            /* 根据层叠性，它会将span里的position层叠掉，但上面没写，默认是0 0，左上角对齐，会将它层叠掉。 */
+            background-position: 0 -414px;
+        }
+
+        .i {
+            width: 63px;
+            height: 119px;
+            /* background-color: pink; */
+            background-position: -325px -131px;
+        }
+
+        .u {
+            width: 123px;
+            height: 122px;
+            /* background-color: pink; */
+            background-position: -470px -414px;
+        }
+    </style>
+</head>
+<body>
+    <span class="q"></span>
+    <span class="i"></span>
+    <span class="u"></span>
+</body>
+</html>
